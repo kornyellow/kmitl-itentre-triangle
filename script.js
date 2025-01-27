@@ -5,25 +5,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function handleSubmit(event) {
 	event.preventDefault();
-	
-	const side1 = document.getElementById("side1").value.trim();
-	const side2 = document.getElementById("side2").value.trim();
-	const side3 = document.getElementById("side3").value.trim();
 
-	
+	const side1 = document.getElementById("side1");
+	const side2 = document.getElementById("side2");
+	const side3 = document.getElementById("side3");
+
+	const side1Value = side1.value.trim();
+	const side2Value = side2.value.trim();
+	const side3Value = side3.value.trim();
+
 	const side1Error = document.getElementById("side1Error");
 	const side2Error = document.getElementById("side2Error");
 	const side3Error = document.getElementById("side3Error");
 
-	
-	let output1 = validateInput(side1);
-	let output2 = validateInput(side2);
-	let output3 = validateInput(side3);
+	let output1 = validateInput(side1Value);
+	let output2 = validateInput(side2Value);
+	let output3 = validateInput(side3Value);
 
 	if (output1 !== "Input valid." || output2 !== "Input valid." || output3 !== "Input valid.") {
 		side1Error.textContent = output1 !== "Input valid." ? output1 : "";
 		side2Error.textContent = output2 !== "Input valid." ? output2 : "";
 		side3Error.textContent = output3 !== "Input valid." ? output3 : "";
+
+		side1.style.borderColor = output1 !== "Input valid." ? "red" : "";
+		side2.style.borderColor = output2 !== "Input valid." ? "red" : "";
+		side3.style.borderColor = output3 !== "Input valid." ? "red" : "";
+
 		displayResult("Invalid input.");
 		return;
 	}
@@ -32,20 +39,22 @@ function handleSubmit(event) {
 	side2Error.textContent = "";
 	side3Error.textContent = "";
 
-	let { x, y, z } = sortSides(Number(side1), Number(side2), Number(side3));
+	side1.style.borderColor = "";
+	side2.style.borderColor = "";
+	side3.style.borderColor = "";
 
+	let { x, y, z } = sortSides(Number(side1Value), Number(side2Value), Number(side3Value));
 	const triangleType = classifyTriangle(x, y, z);
-
 	displayResult(triangleType);
 }
 
 function displayResult(result) {
 	const resultDiv = document.getElementById("result");
-	if (result === "Invalid input."){
-		resultDiv.style.color = "#ff3b30";
-	}else if(result === "Not a Triangle !!!"){
-		resultDiv.style.color = "#ab7f12";
-	}else{
+	if (result === "Invalid input.") {
+		resultDiv.style.color = "red";
+	} else if (result === "Not a Triangle !!!") {
+		resultDiv.style.color = "red";
+	} else {
 		resultDiv.style.color = "black";
 	}
 	resultDiv.value = result;

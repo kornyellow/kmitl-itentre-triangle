@@ -15,47 +15,37 @@
 	<h1>Triangle Classifier</h1>
 	<p>The Triangle Classification Tool helps users determine the type of a triangle based on the lengths of its sides.</p>
 	<div>
-		<form action="">
+		<form>
 			<div class="form-title">Enter the length of sides</div>
-            <div>
-                <table>
-						<!-- row side 1 -->
-						<tr>
-							<th class="label-column"><label for="">Side 1</label></th>
-							<th class="input-column"><input type="text" id="side1" 
-								name="side1" required></th>
-						</tr>
-						<tr class="side-error">
-							<th class="label-column"></th>
-                        	<th class="error-column" id="side1Error"></th>
-						</tr>
-
-						<!-- row side 2 -->
-						<tr>
-							<th class="label-column"><label for="">Side 2</label></th>
-							<th class="input-column"><input type="text" id="side2" 
-								name="side2" required></th>
-						</tr>
-						<tr class="side-error">
-							<th class="label-column"></th>
-                        	<th class="error-column" id="side2Error"></th>
-						</tr>
-
-						<!-- row side 3 -->
-						<tr>
-							<th class="label-column"><label for="">Side 3</label></th>
-							<th class="input-column"><input type="text" id="side3" 
-								name="side3" required></th>
-						</tr>
-						<tr class="side-error">
-							<th class="label-column"></th>
-                        	<th class="error-column" id="side3Error"></th>
-						</tr>
-
-                </table>
-            </div>
+			<div>
+				<table>
+					<tr>
+						<th class="label-column"><label for="">Side 1</label></th>
+						<th class="input-column"><input type="text" id="side1" name="side1" required></th>
+					</tr>
+					<tr class="side-error">
+						<th class="label-column"></th>
+						<th class="error-column" id="side1Error"></th>
+					</tr>
+					<tr>
+						<th class="label-column"><label for="">Side 2</label></th>
+						<th class="input-column"><input type="text" id="side2" name="side2" required></th>
+					</tr>
+					<tr class="side-error">
+						<th class="label-column"></th>
+						<th class="error-column" id="side2Error"></th>
+					</tr>
+					<tr>
+						<th class="label-column"><label for="">Side 3</label></th>
+						<th class="input-column"><input type="text" id="side3" name="side3" required></th>
+					</tr>
+					<tr class="side-error">
+						<th class="label-column"></th>
+						<th class="error-column" id="side3Error"></th>
+					</tr>
+				</table>
+			</div>
 			<table>
-				<!-- submit & result -->
 				<tr>
 					<th class="label-column"></th>
 					<th class="title-result">Result</th>
@@ -66,11 +56,7 @@
 				</tr>
 			</table>
 		</form>
-		
 	</div>
-	<!-- <div id="program"></div> -->
-
-	<!-- <canvas id="triangleCanvas" width="300" height="300" style="border:1px solid #000;"></canvas> -->
 </body>
 
 </html>
